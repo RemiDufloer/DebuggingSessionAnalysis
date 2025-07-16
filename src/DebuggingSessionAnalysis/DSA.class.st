@@ -24,6 +24,16 @@ DSA >> events: aCollection [
 	^ self
 ]
 
+{ #category : 'instance creation' }
+DSA >> fromEvents: aCollection [ 
+
+
+	events := aCollection .
+	history := DSRecordHistory on: events.
+	self populateWindows.
+	^ self
+]
+
 { #category : 'public' }
 DSA >> fromFileName: aFilename [
 	"Public method. Entry point of the Visualization Framework."
